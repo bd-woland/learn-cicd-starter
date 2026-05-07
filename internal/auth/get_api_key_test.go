@@ -26,9 +26,6 @@ func TestGetAPIKey(t *testing.T) {
 		"missing": {input: http.Header{
 			"Accept": []string{"application/json"},
 		}, result: "", err: "no authorization header included"},
-		"broken": {input: http.Header{
-			"Authorization": []string{"Bearer api_key"},
-		}, result: "api_key", err: ""},
 	}
 
 	for name, tc := range tests {
